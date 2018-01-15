@@ -441,7 +441,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
 def run_test_fancy_polygon():
     """ Tests the   fancy_polygon   function. """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement this TEST function.
+    # DONE: 9. Implement this TEST function.
     #   It TESTS the   fancy_polygon   function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -551,7 +551,7 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
       :type thickness:       int
     """
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -570,7 +570,8 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
         if k + hops_to_next_point < len(points):
             line = rg.Line(points[k], points[k + hops_to_next_point])
         else:
-            line = rg.Line(points[k], points[])
+            line = rg.Line(points[k], points[(k+hops_to_next_point)%len(
+                points)])
         line.color = color
         line.thickness = thickness
         line.arrow = 'last'
